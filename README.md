@@ -7,6 +7,16 @@ Simple-to-use React hook to add light/dark modes to your React app.
 ✅️ Snaps back to OS preference if needed<br />
 ✅️ Syncs theme across tabs and windows<br />
 
+### Installation
+
+```
+npm i @madebysid/usetheme
+
+--OR--
+
+yarn add @madebysid/usetheme
+```
+
 ### Usage
 
 1. Wrap your app in a `ThemeProvider`:
@@ -31,11 +41,11 @@ function Component() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div>
+    <>
       Current theme: {theme}
       <button onClick={setTheme("dark")}>🌚</button>
       <button onClick={setTheme("light")}>🌝</button>
-    </div>
+    </>
   );
 }
 ```
