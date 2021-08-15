@@ -1,6 +1,6 @@
 {
   "name": "@madebysid/usetheme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/lib.cjs.js",
   "module": "./dist/lib.esm.js",
   "types": "./dist/lib.d.ts",
