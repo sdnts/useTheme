@@ -2,20 +2,20 @@
 
 Simple-to-use React hook to add light/dark modes to your React app.
 
-✔️ Respects user OS preference
-✔️ Respects manual theme overrides
-✔️ Snaps back to OS preference if needed
+✅ Respects user OS preference<br />
+✅ Respects manual theme overrides<br />
+✅ Snaps back to OS preference if needed<br />
 
 ### Usage
 
-1. Wrap your app inside a `ThemeProvider`:
+1. Wrap your app in a `ThemeProvider`:
 
 ```typescript
 import { ThemeProvider } from "useTheme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>// .. Rest of your app</ThemeProvider>
+    <ThemeProvider>{/* ... Rest of your app */}</ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
