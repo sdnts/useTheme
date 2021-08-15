@@ -2,9 +2,10 @@
 
 Simple-to-use React hook to add light/dark modes to your React app.
 
-✅ Respects user OS preference<br />
-✅ Respects manual theme overrides<br />
-✅ Snaps back to OS preference if needed<br />
+✅️ Respects user OS preference<br />
+✅️️ Respects manual theme overrides<br />
+✅️ Snaps back to OS preference if needed<br />
+✅️ Syncs theme across tabs and windows<br />
 
 ### Usage
 

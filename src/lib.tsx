@@ -9,6 +9,8 @@ import React, {
 
 export type Theme = "light" | "dark";
 
+const LOCALSTORAGE_KEY = "theme";
+
 /**
  * Stores the currently active theme, and a way to change it.
  *
@@ -41,7 +43,7 @@ export function ThemeProvider({ children }: PropsWithChildren<{}>) {
     if (!OSTheme) {
       // This will only happen on first render
       setOSTheme(isLightOS() ? "light" : "dark");
-      setLocalStorageTheme(localStorage.getItem("theme") as Theme | null);
+      setLocalStorageTheme(localStorage.getItem(LOCALSTORAGE_KEY) as Theme);
     }
 
     if (!localStorageTheme) {
@@ -58,9 +60,9 @@ export function ThemeProvider({ children }: PropsWithChildren<{}>) {
   // Set up persistence
   useEffect(() => {
     if (localStorageTheme) {
-      localStorage.setItem("theme", localStorageTheme);
+      localStorage.setItem(LOCALSTORAGE_KEY, localStorageTheme);
     } else {
-      localStorage.removeItem("theme");
+      localStorage.removeItem(LOCALSTORAGE_KEY);
     }
   }, [localStorageTheme]);
 
@@ -71,8 +73,13 @@ export function ThemeProvider({ children }: PropsWithChildren<{}>) {
       setOSTheme((t) => (t === "light" ? "dark" : "light"));
     watchMedia.addEventListener("change", onOSThemeChange);
 
+    const onStorageEvent = () =>
+      setLocalStorageTheme(localStorage.getItem(LOCALSTORAGE_KEY) as Theme);
+    window.addEventListener("storage", onStorageEvent);
+
     return () => {
       watchMedia.removeEventListener("change", onOSThemeChange);
+      window.removeEventListener("storage", onStorageEvent);
     };
   }, []);
 
