@@ -1,12 +1,9 @@
 {
   "name": "@madebysid/usetheme",
   "version": "0.0.1",
-  "exports": {
-    ".": {
-      "import": "./dist/lib.esm.js",
-      "require": "./dist/lib.cjs.js"
-    }
-  },
+  "main": "./dist/lib.cjs.js",
+  "module": "./dist/lib.esm.js",
+  "types": "./dist/lib.d.ts",
   "files": [
     "dist"
   ],
