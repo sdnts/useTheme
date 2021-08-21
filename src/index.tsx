@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ThemeProvider, useTheme } from "./lib";
+import { useTheme } from "./lib";
 import moon from "./moon.svg";
 import sun from "./sun.svg";
 
@@ -9,9 +9,7 @@ import sun from "./sun.svg";
  */
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <Demo />
-    </ThemeProvider>
+    <Demo />
   </React.StrictMode>,
   document.getElementById("root")
 );
