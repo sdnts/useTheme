@@ -39,6 +39,7 @@ function ThemeSwitch() {
   return (
     <>
       <span
+        id="current-theme"
         style={{
           fontSize: 16,
           fontFamily: "monospace",
@@ -48,6 +49,7 @@ function ThemeSwitch() {
         Current theme: {theme}
       </span>
       <button
+        id="theme-switch"
         style={{
           background: "none",
           border: "none",
@@ -56,8 +58,8 @@ function ThemeSwitch() {
         title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       >
-        {theme === "light" && <img src={moon} />}
-        {theme === "dark" && <img src={sun} />}
+        {theme === "light" && <img src={moon} id="moon-icon" />}
+        {theme === "dark" && <img src={sun} id="sun-icon" />}
       </button>
     </>
   );

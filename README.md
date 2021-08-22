@@ -37,3 +37,13 @@ function Component() {
   );
 }
 ```
+
+### Development
+
+1. Install dependencies: `yarn`
+2. Start dev server: `yarn dev`
+
+### Testing
+
+1. Install playwright browsers: `yarn playwright install` (Only needed once)
+2. Run tests: `yarn test`

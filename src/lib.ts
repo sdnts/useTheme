@@ -6,17 +6,17 @@ const LOCALSTORAGE_KEY = "theme";
 
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
-    if (import.meta?.env?.SSR) {
+    if (typeof window === "undefined") {
+      // When running on the server, bail early
       return "light";
     }
 
-    const localStorageTheme = localStorage?.getItem(LOCALSTORAGE_KEY); // `?` ensures this works correctly with SSR
+    const localStorageTheme = window.localStorage.getItem(LOCALSTORAGE_KEY);
     if (localStorageTheme) {
       return localStorageTheme as Theme;
     }
 
-    if (window?.matchMedia("(prefers-color-scheme: dark)")) {
-      // `?` ensures this works correctly with SSR
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark";
     }
 
