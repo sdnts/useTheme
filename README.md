@@ -5,6 +5,7 @@ Simple-to-use React hook to add light/dark modes to your React app.
 ✅️ Respects user OS preference<br />
 ✅️️ Respects manual theme overrides<br />
 ✅️ Snaps back to OS preference if needed<br />
+✅️ SSR ready<br />
 ✅️ Syncs theme across tabs and windows<br />
 
 ### Installation
@@ -19,20 +20,7 @@ yarn add @madebysid/usetheme
 
 ### Usage
 
-1. Wrap your app in a `ThemeProvider`:
-
-```typescript
-import { ThemeProvider } from "useTheme";
-
-ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider>{/* ... Rest of your app */}</ThemeProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
-```
-
-2. Use the `useTheme` hook whenever you need access to the theme:
+1. Use the `useTheme` hook whenever you need access to the theme:
 
 ```typescript
 import { useTheme } from "useTheme";
@@ -49,3 +37,13 @@ function Component() {
   );
 }
 ```
+
+### Development
+
+1. Install dependencies: `yarn`
+2. Start dev server: `yarn dev`
+
+### Testing
+
+1. Install playwright browsers: `yarn playwright install` (Only needed once)
+2. Run tests: `yarn test`
